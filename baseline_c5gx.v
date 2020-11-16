@@ -17,12 +17,6 @@ module baseline_c5gx(
       ///////// KEY ///////// 1.2 V ///////
       input       [3:0]  KEY,
 
-      ///////// LEDG ///////// 2.5 V ///////
-      output      [7:0]  LEDG,
-
-      ///////// LEDR ///////// 2.5 V ///////
-      output      [9:0]  LEDR,
-
       ///////// SW ///////// 1.2 V ///////
       input       [3:0]  SW
 );
@@ -31,9 +25,7 @@ module baseline_c5gx(
 		reg [6:0] seven_seg_display_1;
 		reg [6:0] seven_seg_display_2;
 		reg [6:0] seven_seg_display_3;
-		reg [7:0] seven_seg;
-		wire btn, rst;
-		reg [1:0] btn_counter;
+		reg [6:0] seven_seg;
 		wire [3:0] switch;
 		
 		assign switch = SW [3:0];
