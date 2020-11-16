@@ -17,7 +17,7 @@
 // PROGRAM "Quartus Prime"
 // VERSION "Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition"
 
-// DATE "11/16/2020 21:08:21"
+// DATE "11/16/2020 22:54:29"
 
 // 
 // Device: Altera 5CGXFC5C6F27C7 Package FBGA672
@@ -106,11 +106,11 @@ wire \SW[1]~input_o ;
 wire \SW[2]~input_o ;
 wire \SW[0]~input_o ;
 wire \SW[3]~input_o ;
-wire \WideOr5~0_combout ;
+wire \WideOr6~0_combout ;
 wire \KEY[2]~input_o ;
-wire \WideOr4~0_combout ;
+wire \WideOr5~0_combout ;
 wire \seven_seg_display_2[1]~feeder_combout ;
-wire \Decoder0~0_combout ;
+wire \WideOr4~0_combout ;
 wire \seven_seg_display_2[2]~feeder_combout ;
 wire \WideOr3~0_combout ;
 wire \seven_seg_display_2[3]~feeder_combout ;
@@ -654,9 +654,10 @@ defparam \SW[3]~input .simulate_z_as = "z";
 // synopsys translate_on
 
 // Location: LABCELL_X64_Y2_N9
-cyclonev_lcell_comb \WideOr5~0 (
+cyclonev_lcell_comb \WideOr6~0 (
 // Equation(s):
-// \WideOr5~0_combout  = ( \SW[3]~input_o  & ( (\SW[1]~input_o  & (!\SW[2]~input_o  & \SW[0]~input_o )) ) ) # ( !\SW[3]~input_o  & ( (!\SW[1]~input_o  & (!\SW[2]~input_o  $ (!\SW[0]~input_o ))) ) )
+// \WideOr6~0_combout  = ( \SW[3]~input_o  & ( (!\SW[1]~input_o  & (\SW[2]~input_o  & \SW[0]~input_o )) # (\SW[1]~input_o  & ((\SW[0]~input_o ) # (\SW[2]~input_o ))) ) ) # ( !\SW[3]~input_o  & ( (!\SW[1]~input_o  & (!\SW[2]~input_o  $ (!\SW[0]~input_o ))) ) 
+// )
 
 	.dataa(!\SW[1]~input_o ),
 	.datab(!\SW[2]~input_o ),
@@ -667,14 +668,14 @@ cyclonev_lcell_comb \WideOr5~0 (
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
-	.combout(\WideOr5~0_combout ),
+	.combout(\WideOr6~0_combout ),
 	.sumout(),
 	.cout(),
 	.shareout());
 // synopsys translate_off
-defparam \WideOr5~0 .extended_lut = "off";
-defparam \WideOr5~0 .lut_mask = 64'h2828040428280404;
-defparam \WideOr5~0 .shared_arith = "off";
+defparam \WideOr6~0 .extended_lut = "off";
+defparam \WideOr6~0 .lut_mask = 64'h2828171728281717;
+defparam \WideOr6~0 .shared_arith = "off";
 // synopsys translate_on
 
 // Location: IOIBUF_X46_Y0_N1
@@ -692,7 +693,7 @@ defparam \KEY[2]~input .simulate_z_as = "z";
 dffeas \seven_seg_display_2[0] (
 	.clk(\CLOCK_125_p~inputCLKENA0_outclk ),
 	.d(gnd),
-	.asdata(\WideOr5~0_combout ),
+	.asdata(\WideOr6~0_combout ),
 	.clrn(vcc),
 	.aload(gnd),
 	.sclr(gnd),
@@ -708,9 +709,9 @@ defparam \seven_seg_display_2[0] .power_up = "low";
 // synopsys translate_on
 
 // Location: LABCELL_X64_Y2_N33
-cyclonev_lcell_comb \WideOr4~0 (
+cyclonev_lcell_comb \WideOr5~0 (
 // Equation(s):
-// \WideOr4~0_combout  = ( \SW[3]~input_o  & ( (!\SW[1]~input_o  & (\SW[2]~input_o  & \SW[0]~input_o )) ) ) # ( !\SW[3]~input_o  & ( (\SW[2]~input_o  & (!\SW[1]~input_o  $ (!\SW[0]~input_o ))) ) )
+// \WideOr5~0_combout  = ( \SW[3]~input_o  & ( (!\SW[0]~input_o  & ((\SW[2]~input_o ))) # (\SW[0]~input_o  & (\SW[1]~input_o )) ) ) # ( !\SW[3]~input_o  & ( (\SW[2]~input_o  & (!\SW[1]~input_o  $ (!\SW[0]~input_o ))) ) )
 
 	.dataa(!\SW[1]~input_o ),
 	.datab(!\SW[2]~input_o ),
@@ -721,27 +722,27 @@ cyclonev_lcell_comb \WideOr4~0 (
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
-	.combout(\WideOr4~0_combout ),
+	.combout(\WideOr5~0_combout ),
 	.sumout(),
 	.cout(),
 	.shareout());
 // synopsys translate_off
-defparam \WideOr4~0 .extended_lut = "off";
-defparam \WideOr4~0 .lut_mask = 64'h1212020212120202;
-defparam \WideOr4~0 .shared_arith = "off";
+defparam \WideOr5~0 .extended_lut = "off";
+defparam \WideOr5~0 .lut_mask = 64'h1212353512123535;
+defparam \WideOr5~0 .shared_arith = "off";
 // synopsys translate_on
 
 // Location: LABCELL_X64_Y2_N0
 cyclonev_lcell_comb \seven_seg_display_2[1]~feeder (
 // Equation(s):
-// \seven_seg_display_2[1]~feeder_combout  = ( \WideOr4~0_combout  )
+// \seven_seg_display_2[1]~feeder_combout  = ( \WideOr5~0_combout  )
 
 	.dataa(gnd),
 	.datab(gnd),
 	.datac(gnd),
 	.datad(gnd),
 	.datae(gnd),
-	.dataf(!\WideOr4~0_combout ),
+	.dataf(!\WideOr5~0_combout ),
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
@@ -775,9 +776,9 @@ defparam \seven_seg_display_2[1] .power_up = "low";
 // synopsys translate_on
 
 // Location: LABCELL_X64_Y2_N48
-cyclonev_lcell_comb \Decoder0~0 (
+cyclonev_lcell_comb \WideOr4~0 (
 // Equation(s):
-// \Decoder0~0_combout  = ( !\SW[0]~input_o  & ( (\SW[1]~input_o  & (!\SW[2]~input_o  & !\SW[3]~input_o )) ) )
+// \WideOr4~0_combout  = ( \SW[0]~input_o  & ( (\SW[1]~input_o  & (\SW[2]~input_o  & \SW[3]~input_o )) ) ) # ( !\SW[0]~input_o  & ( (!\SW[1]~input_o  & (\SW[2]~input_o  & \SW[3]~input_o )) # (\SW[1]~input_o  & (!\SW[2]~input_o  & !\SW[3]~input_o )) ) )
 
 	.dataa(!\SW[1]~input_o ),
 	.datab(!\SW[2]~input_o ),
@@ -788,27 +789,27 @@ cyclonev_lcell_comb \Decoder0~0 (
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
-	.combout(\Decoder0~0_combout ),
+	.combout(\WideOr4~0_combout ),
 	.sumout(),
 	.cout(),
 	.shareout());
 // synopsys translate_off
-defparam \Decoder0~0 .extended_lut = "off";
-defparam \Decoder0~0 .lut_mask = 64'h4400440000000000;
-defparam \Decoder0~0 .shared_arith = "off";
+defparam \WideOr4~0 .extended_lut = "off";
+defparam \WideOr4~0 .lut_mask = 64'h4422442200110011;
+defparam \WideOr4~0 .shared_arith = "off";
 // synopsys translate_on
 
 // Location: LABCELL_X64_Y2_N42
 cyclonev_lcell_comb \seven_seg_display_2[2]~feeder (
 // Equation(s):
-// \seven_seg_display_2[2]~feeder_combout  = ( \Decoder0~0_combout  )
+// \seven_seg_display_2[2]~feeder_combout  = ( \WideOr4~0_combout  )
 
 	.dataa(gnd),
 	.datab(gnd),
 	.datac(gnd),
 	.datad(gnd),
 	.datae(gnd),
-	.dataf(!\Decoder0~0_combout ),
+	.dataf(!\WideOr4~0_combout ),
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
@@ -911,7 +912,7 @@ defparam \seven_seg_display_2[3] .power_up = "low";
 // Location: LABCELL_X64_Y2_N18
 cyclonev_lcell_comb \WideOr2~0 (
 // Equation(s):
-// \WideOr2~0_combout  = ( \SW[0]~input_o  & ( ((!\SW[2]~input_o ) # (!\SW[3]~input_o )) # (\SW[1]~input_o ) ) ) # ( !\SW[0]~input_o  & ( (!\SW[1]~input_o  & \SW[2]~input_o ) ) )
+// \WideOr2~0_combout  = ( \SW[0]~input_o  & ( (!\SW[3]~input_o ) # ((!\SW[1]~input_o  & !\SW[2]~input_o )) ) ) # ( !\SW[0]~input_o  & ( (!\SW[1]~input_o  & (\SW[2]~input_o  & !\SW[3]~input_o )) ) )
 
 	.dataa(!\SW[1]~input_o ),
 	.datab(!\SW[2]~input_o ),
@@ -928,7 +929,7 @@ cyclonev_lcell_comb \WideOr2~0 (
 	.shareout());
 // synopsys translate_off
 defparam \WideOr2~0 .extended_lut = "off";
-defparam \WideOr2~0 .lut_mask = 64'h22222222FFDDFFDD;
+defparam \WideOr2~0 .lut_mask = 64'h22002200FF88FF88;
 defparam \WideOr2~0 .shared_arith = "off";
 // synopsys translate_on
 
@@ -978,7 +979,7 @@ defparam \seven_seg_display_2[4] .power_up = "low";
 // Location: LABCELL_X64_Y2_N21
 cyclonev_lcell_comb \WideOr1~0 (
 // Equation(s):
-// \WideOr1~0_combout  = ( \SW[0]~input_o  & ( ((!\SW[2]~input_o  & !\SW[3]~input_o )) # (\SW[1]~input_o ) ) ) # ( !\SW[0]~input_o  & ( (!\SW[2]~input_o  & (\SW[1]~input_o  & !\SW[3]~input_o )) # (\SW[2]~input_o  & ((\SW[3]~input_o ))) ) )
+// \WideOr1~0_combout  = ( \SW[0]~input_o  & ( !\SW[3]~input_o  $ (((!\SW[1]~input_o  & \SW[2]~input_o ))) ) ) # ( !\SW[0]~input_o  & ( (\SW[1]~input_o  & (!\SW[2]~input_o  & !\SW[3]~input_o )) ) )
 
 	.dataa(!\SW[1]~input_o ),
 	.datab(!\SW[2]~input_o ),
@@ -995,7 +996,7 @@ cyclonev_lcell_comb \WideOr1~0 (
 	.shareout());
 // synopsys translate_off
 defparam \WideOr1~0 .extended_lut = "off";
-defparam \WideOr1~0 .lut_mask = 64'h43434343D5D5D5D5;
+defparam \WideOr1~0 .lut_mask = 64'h40404040D2D2D2D2;
 defparam \WideOr1~0 .shared_arith = "off";
 // synopsys translate_on
 
@@ -1021,8 +1022,8 @@ defparam \seven_seg_display_2[5] .power_up = "low";
 // Location: LABCELL_X64_Y2_N24
 cyclonev_lcell_comb \WideOr0~0 (
 // Equation(s):
-// \WideOr0~0_combout  = ( \SW[3]~input_o  & ( \SW[2]~input_o  & ( (\SW[1]~input_o ) # (\SW[0]~input_o ) ) ) ) # ( !\SW[3]~input_o  & ( \SW[2]~input_o  & ( (\SW[0]~input_o  & \SW[1]~input_o ) ) ) ) # ( !\SW[3]~input_o  & ( !\SW[2]~input_o  & ( 
-// !\SW[1]~input_o  ) ) )
+// \WideOr0~0_combout  = ( !\SW[3]~input_o  & ( \SW[2]~input_o  & ( (\SW[0]~input_o  & \SW[1]~input_o ) ) ) ) # ( \SW[3]~input_o  & ( !\SW[2]~input_o  & ( (\SW[0]~input_o  & \SW[1]~input_o ) ) ) ) # ( !\SW[3]~input_o  & ( !\SW[2]~input_o  & ( !\SW[1]~input_o 
+//  ) ) )
 
 	.dataa(gnd),
 	.datab(!\SW[0]~input_o ),
@@ -1039,7 +1040,7 @@ cyclonev_lcell_comb \WideOr0~0 (
 	.shareout());
 // synopsys translate_off
 defparam \WideOr0~0 .extended_lut = "off";
-defparam \WideOr0~0 .lut_mask = 64'hF0F0000003033F3F;
+defparam \WideOr0~0 .lut_mask = 64'hF0F0030303030000;
 defparam \WideOr0~0 .shared_arith = "off";
 // synopsys translate_on
 
@@ -1089,14 +1090,14 @@ defparam \seven_seg_display_2[6] .power_up = "low";
 // Location: LABCELL_X65_Y2_N24
 cyclonev_lcell_comb \seven_seg_display_3[0]~feeder (
 // Equation(s):
-// \seven_seg_display_3[0]~feeder_combout  = ( \WideOr5~0_combout  )
+// \seven_seg_display_3[0]~feeder_combout  = ( \WideOr6~0_combout  )
 
 	.dataa(gnd),
 	.datab(gnd),
 	.datac(gnd),
 	.datad(gnd),
 	.datae(gnd),
-	.dataf(!\WideOr5~0_combout ),
+	.dataf(!\WideOr6~0_combout ),
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
@@ -1144,7 +1145,7 @@ defparam \seven_seg_display_3[0] .power_up = "low";
 dffeas \seven_seg_display_3[1] (
 	.clk(\CLOCK_125_p~inputCLKENA0_outclk ),
 	.d(gnd),
-	.asdata(\WideOr4~0_combout ),
+	.asdata(\WideOr5~0_combout ),
 	.clrn(vcc),
 	.aload(gnd),
 	.sclr(gnd),
@@ -1163,7 +1164,7 @@ defparam \seven_seg_display_3[1] .power_up = "low";
 dffeas \seven_seg_display_3[2] (
 	.clk(\CLOCK_125_p~inputCLKENA0_outclk ),
 	.d(gnd),
-	.asdata(\Decoder0~0_combout ),
+	.asdata(\WideOr4~0_combout ),
 	.clrn(vcc),
 	.aload(gnd),
 	.sclr(gnd),
@@ -1341,7 +1342,7 @@ defparam \KEY[0]~input .simulate_z_as = "z";
 dffeas \seven_seg_display_0[0] (
 	.clk(\CLOCK_125_p~inputCLKENA0_outclk ),
 	.d(gnd),
-	.asdata(\WideOr5~0_combout ),
+	.asdata(\WideOr6~0_combout ),
 	.clrn(vcc),
 	.aload(gnd),
 	.sclr(gnd),
@@ -1360,7 +1361,7 @@ defparam \seven_seg_display_0[0] .power_up = "low";
 dffeas \seven_seg_display_0[1] (
 	.clk(\CLOCK_125_p~inputCLKENA0_outclk ),
 	.d(gnd),
-	.asdata(\WideOr4~0_combout ),
+	.asdata(\WideOr5~0_combout ),
 	.clrn(vcc),
 	.aload(gnd),
 	.sclr(gnd),
@@ -1378,14 +1379,14 @@ defparam \seven_seg_display_0[1] .power_up = "low";
 // Location: LABCELL_X64_Y2_N39
 cyclonev_lcell_comb \seven_seg_display_0[2]~feeder (
 // Equation(s):
-// \seven_seg_display_0[2]~feeder_combout  = ( \Decoder0~0_combout  )
+// \seven_seg_display_0[2]~feeder_combout  = ( \WideOr4~0_combout  )
 
 	.dataa(gnd),
 	.datab(gnd),
 	.datac(gnd),
 	.datad(gnd),
 	.datae(gnd),
-	.dataf(!\Decoder0~0_combout ),
+	.dataf(!\WideOr4~0_combout ),
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
@@ -1581,7 +1582,7 @@ defparam \KEY[1]~input .simulate_z_as = "z";
 dffeas \seven_seg_display_1[0] (
 	.clk(\CLOCK_125_p~inputCLKENA0_outclk ),
 	.d(gnd),
-	.asdata(\WideOr5~0_combout ),
+	.asdata(\WideOr6~0_combout ),
 	.clrn(vcc),
 	.aload(gnd),
 	.sclr(gnd),
@@ -1600,7 +1601,7 @@ defparam \seven_seg_display_1[0] .power_up = "low";
 dffeas \seven_seg_display_1[1] (
 	.clk(\CLOCK_125_p~inputCLKENA0_outclk ),
 	.d(gnd),
-	.asdata(\WideOr4~0_combout ),
+	.asdata(\WideOr5~0_combout ),
 	.clrn(vcc),
 	.aload(gnd),
 	.sclr(gnd),
@@ -1618,7 +1619,7 @@ defparam \seven_seg_display_1[1] .power_up = "low";
 // Location: FF_X64_Y2_N50
 dffeas \seven_seg_display_1[2] (
 	.clk(\CLOCK_125_p~inputCLKENA0_outclk ),
-	.d(\Decoder0~0_combout ),
+	.d(\WideOr4~0_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),

@@ -52,11 +52,11 @@ module baseline_c5gx(
 			4'b1000 : seven_seg <= 7'b0000000;	//8
 			4'b1001 : seven_seg <= 7'b0010000;	//9
 			4'b1010 : seven_seg <= 7'b0001000;	//A
-			4'b1011 : seven_seg <= 7'b0110001;	//B
-			4'b1100 : seven_seg <= 7'b0110000;	//C
-			4'b1101 : seven_seg <= 7'b1000010;	//D
-			4'b1110 : seven_seg <= 7'b1100000;	//E
-			4'b1111 : seven_seg <= 7'b1110000;	//F
+			4'b1011 : seven_seg <= 7'b1000011;	//B
+			4'b1100 : seven_seg <= 7'b0000110;	//C
+			4'b1101 : seven_seg <= 7'b0100001;	//D
+			4'b1110 : seven_seg <= 7'b0000011;	//E
+			4'b1111 : seven_seg <= 7'b0000111;	//F
 			endcase
 		end
 		
