@@ -24,7 +24,7 @@
 *.smsg
 *.sof
 *.sopc_builder
-#*.summary
+*.summary
 *.tcl
 *.txt # Explicitly add any text files used
 *~
