@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Sat Nov 14 21:02:40 2020
+Analysis & Synthesis Status : Successful - Mon Nov 16 20:05:16 2020
 Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 Revision Name : 7-segment-display-controller
 Top-level Entity Name : baseline_c5gx
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 18
+Total registers : 28
 Total pins : 55
 Total virtual pins : 0
 Total block memory bits : 0
